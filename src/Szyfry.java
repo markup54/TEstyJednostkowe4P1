@@ -1,4 +1,24 @@
 public class Szyfry {
+
+    public static String szyfrujKwadratem(String slowo){
+        String zaszyfrowane ="";
+        int bok = 0;
+        while (bok*bok<slowo.length()){
+            bok = bok+1;
+        }
+        while (bok*bok>slowo.length()){
+            slowo = slowo+" ";
+        }
+        for (int i = 0; i < bok; i++) {
+            for (int j = 0; j < bok; j++) {
+                zaszyfrowane = zaszyfrowane + slowo.charAt(i+j*bok);
+            }
+        }
+
+        return zaszyfrowane.trim();
+    }
+
+
     public static String szyfrujCezarem(String slowo,int klucz){
         String zaszyfrowane = "";
         boolean czyDuze = false;

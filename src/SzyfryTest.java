@@ -39,4 +39,28 @@ class SzyfryTest {
     void testSzyfrujCezaremJezeliKluczMniejszyOdDlugosciAlfabetuSpacja() {
         Assertions.assertEquals("de f",Szyfry.szyfrujCezarem("ab c",3));
     }
+
+    //___________________________________________________________________________
+
+    @Test
+    void testSzyfrujKwadratemJezeliPusteSlowo(){
+        Assertions.assertEquals("",Szyfry.szyfrujKwadratem(""));
+    }
+    @Test
+    void testSzyfrujKwadratemJezeliDlugoscSlowaJestPotega(){
+        Assertions.assertEquals("acbd",Szyfry.szyfrujKwadratem("abcd"));
+    }
+
+    @Test
+    void testSzyfrujKwadratemJezeliDlugoscSlowaJestMniejszaOdPotegi(){
+        Assertions.assertEquals("ad be c",Szyfry.szyfrujKwadratem("abcde"));
+    }
+    @Test
+    void testSzyfrujKwadratemJezeliDlugoscSlowaJestMniejszaOdPotegi2(){
+        Assertions.assertEquals("acb",Szyfry.szyfrujKwadratem("abc"));
+    }
+
+
+
+
 }
